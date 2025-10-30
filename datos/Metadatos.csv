@@ -1,0 +1,9 @@
+Nombre_archivo,Duracion_video,Fecha_inicio,Fecha_fin,Coordenadas,Comentarios
+Filtro merida C2.avi,27:16:00,30/06/2025 7:00:00,30/06/2025 7:30:00,"21.109989, -86.955757",El video cuenta con saltos o tirones que pueden comprometer la precisión del modelo
+Fracc kusamil C2 2.avi,29:59:00,30/06/2025 7:00:00,30/06/2025 7:30:00,"21.123818, -86.928035",Video en buenas condiciones
+Fracc kusamil C2.avi,29:56:00,30/06/2025 7:00:03,30/06/2025 7:30:01,"21.123818, -86.928035",El video cuenta con muchas sombras que pueden afectar la detección del modelo.
+Portillo - Lakin.avi,29:58:00,30/06/2025 8:00:02,30/06/2025 8:30:00,"21.137979, -86.899562",El ángulo de visión y las sombras podría afectar la precisión
+Portillo - lakin 2.avi,29:56:00,30/06/2025 8:00:04,30/06/2025 8:30:00,"21.137979, -86.899562",El video se ve un poco ópaco lo podría afectar un poco la precisión del modelo
+Av Portillo -  Av Paraiso Maya.avi,29:57:00,30/06/2025 7:00:03,30/06/2025 7:30:00,"21.126742, -86.922146","La imágen se ve un poco ópaca, probablemente por suciedad en el lente, podría afectar un poco la precisión del modelo. Solo funciona para el carril izquierdo debido a poste que obstaculiza la visión."
+272 (2025-06-30 18'00'00 - 2025-06-30 18'30'00).avi,29:59:00,30/06/2025 18:00:00,30/06/2025 18:30:00,"21.173707, -86.827688",El ángulo de visión es algo elevado y hay árboles que ocasionan oclusión que podría afectar la precisión del video.
+28 (2025-06-30 08'00'00 - 2025-06-30 08'30'00).avi,29:57:00,30/06/2025 8:00:02,30/06/2025 8:30:00,"21.156538, -86.817562",El ángulo nos favorece para el conteo de los vehículos en el carril izquierdo pero perjudica el carril derecho
