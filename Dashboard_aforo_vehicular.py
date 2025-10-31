@@ -6,7 +6,7 @@ from streamlit_folium import st_folium
 # Configuración de la página
 st.set_page_config(
     page_title="Sistema de Aforo Vehicular",
-    page_icon="🚦",
+    page_icon="�",
     layout="wide",
     initial_sidebar_state="expanded"
 )

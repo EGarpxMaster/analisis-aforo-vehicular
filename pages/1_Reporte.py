@@ -6,10 +6,10 @@ from pathlib import Path
 import os
 
 # Configuración de la página
-st.set_page_config(page_title="Reporte de Aforo Vehicular", page_icon="🚗", layout="wide")
+st.set_page_config(page_title="Reporte de Aforo Vehicular", page_icon="�", layout="wide")
 
 # Título principal
-st.title("📊 Reporte de Aforo Vehicular")
+st.title("Reporte de Aforo Vehicular")
 st.markdown("### Resultados del Modelo de Visión Computacional")
 
 # Función para cargar metadatos
@@ -46,7 +46,7 @@ def cargar_conteos(nombre_video, carpeta_datos="datos"):
             if archivo_normalizado == nombre_base or nombre_base in archivo_normalizado:
                 nombre_archivo = archivo
                 ruta_completa = os.path.join(carpeta_datos, nombre_archivo)
-                st.info(f"📁 Archivo encontrado: {nombre_archivo}")
+                st.info(f"Archivo encontrado: {nombre_archivo}")
                 break
     
     try:
@@ -55,7 +55,7 @@ def cargar_conteos(nombre_video, carpeta_datos="datos"):
         df['count'] = pd.to_numeric(df['count'], errors='coerce').fillna(0)
         return df
     except FileNotFoundError:
-        st.error(f"❌ No se encontró el archivo: {nombre_archivo}")
+        st.error(f"No se encontró el archivo: {nombre_archivo}")
         st.warning("Archivos disponibles en la carpeta datos:")
         try:
             archivos = [f for f in os.listdir(carpeta_datos) if f.endswith('_counts.csv')]
@@ -92,7 +92,7 @@ df_metadatos = cargar_metadatos()
 
 if df_metadatos is not None:
     # Sidebar para selección de video
-    st.sidebar.header("🎥 Selección de Video")
+    st.sidebar.header("Selección de Video")
     
     # Verificar que existe la columna de nombre de video (ajustar según tu CSV)
     columnas_posibles = ['Nombre_archivo']
@@ -119,7 +119,7 @@ if df_metadatos is not None:
     # Mostrar información del video seleccionado
     info_video = df_metadatos[df_metadatos[columna_video] == video_seleccionado].iloc[0]
     
-    with st.sidebar.expander("ℹ️ Información del Video", expanded=True):
+    with st.sidebar.expander("Información del Video", expanded=True):
         for col in df_metadatos.columns:
             if col != columna_video:
                 st.write(f"**{col}:** {info_video[col]}")
@@ -133,10 +133,10 @@ if df_metadatos is not None:
         
         # Tabs para organizar la información
         tab1, tab2, tab3, tab4 = st.tabs([
-            "📈 Resumen General", 
-            "🚦 Línea 1", 
-            "🚦 Línea 2", 
-            "📊 Comparativa"
+            "Resumen General", 
+            "Línea 1", 
+            "Línea 2", 
+            "Comparativa"
         ])
         
         # TAB 1: RESUMEN GENERAL
@@ -154,12 +154,12 @@ if df_metadatos is not None:
             with col1:
                 st.metric("Total Vehículos", f"{total_vehiculos:,}")
             with col2:
-                st.metric("🚗 Autos", f"{total_autos:,}")
+                st.metric("Autos", f"{total_autos:,}")
             with col3:
-                st.metric("🚚 Camiones", f"{total_camiones:,}")
+                st.metric("Camiones", f"{total_camiones:,}")
             with col4:
-                st.metric("👥 Personas", f"{total_personas:,}")
-            
+                st.metric("Personas", f"{total_personas:,}")
+
             st.divider()
             
             # Gráficos
@@ -193,7 +193,7 @@ if df_metadatos is not None:
                 st.plotly_chart(fig_bar, use_container_width=True)
             
             # Tabla de datos completa
-            st.subheader("📋 Datos Detallados")
+            st.subheader("Datos Detallados")
             st.dataframe(
                 todos.style.background_gradient(subset=['count'], cmap='YlOrRd'),
                 use_container_width=True
@@ -201,7 +201,7 @@ if df_metadatos is not None:
         
         # TAB 2: LÍNEA 1
         with tab2:
-            st.header("🚦 Análisis Línea 1")
+            st.header("Análisis Línea 1")
             
             if len(linea_1) > 0:
                 # Métricas de línea 1
@@ -215,12 +215,12 @@ if df_metadatos is not None:
                 with col1:
                     st.metric("Total Línea 1", f"{total_l1:,}")
                 with col2:
-                    st.metric("🚗 Autos", f"{autos_l1:,}")
+                    st.metric("Autos", f"{autos_l1:,}")
                 with col3:
-                    st.metric("🚚 Camiones", f"{camiones_l1:,}")
+                    st.metric("Camiones", f"{camiones_l1:,}")
                 with col4:
-                    st.metric("👥 Personas", f"{personas_l1:,}")
-                
+                    st.metric("Personas", f"{personas_l1:,}")
+
                 st.divider()
                 
                 col1, col2 = st.columns(2)
@@ -260,7 +260,7 @@ if df_metadatos is not None:
         
         # TAB 3: LÍNEA 2
         with tab3:
-            st.header("🚦 Análisis Línea 2")
+            st.header("Análisis Línea 2")
             
             if len(linea_2) > 0:
                 # Métricas de línea 2
@@ -274,11 +274,11 @@ if df_metadatos is not None:
                 with col1:
                     st.metric("Total Línea 2", f"{total_l2:,}")
                 with col2:
-                    st.metric("🚗 Autos", f"{autos_l2:,}")
+                    st.metric("Autos", f"{autos_l2:,}")
                 with col3:
-                    st.metric("🚚 Camiones", f"{camiones_l2:,}")
+                    st.metric("Camiones", f"{camiones_l2:,}")
                 with col4:
-                    st.metric("👥 Personas", f"{personas_l2:,}")
+                    st.metric("Personas", f"{personas_l2:,}")
                 
                 st.divider()
                 
@@ -319,7 +319,7 @@ if df_metadatos is not None:
         
         # TAB 4: COMPARATIVA
         with tab4:
-            st.header("📊 Comparativa entre Líneas")
+            st.header("Comparativa entre Líneas")
             
             if len(linea_1) > 0 and len(linea_2) > 0:
                 # Preparar datos para comparación
@@ -397,7 +397,7 @@ if df_metadatos is not None:
                 st.plotly_chart(fig_heatmap, use_container_width=True)
                 
                 # Tabla comparativa
-                st.subheader("📋 Tabla Comparativa")
+                st.subheader("Tabla Comparativa")
                 tabla_comp = comparacion.pivot_table(
                     index='class',
                     columns='line_id',
@@ -417,14 +417,14 @@ if df_metadatos is not None:
         
         # Sección de descarga
         st.divider()
-        st.subheader("💾 Descargar Datos")
+        st.subheader("Descargar Datos")
         
         col1, col2, col3 = st.columns(3)
         
         with col1:
             csv_todos = todos.to_csv(index=False).encode('utf-8')
             st.download_button(
-                label="⬇️ Descargar Resumen General",
+                label="Descargar Resumen General",
                 data=csv_todos,
                 file_name=f"{video_seleccionado}_resumen_general.csv",
                 mime="text/csv"
@@ -434,7 +434,7 @@ if df_metadatos is not None:
             if len(linea_1) > 0:
                 csv_l1 = linea_1.to_csv(index=False).encode('utf-8')
                 st.download_button(
-                    label="⬇️ Descargar Línea 1",
+                    label="Descargar Línea 1",
                     data=csv_l1,
                     file_name=f"{video_seleccionado}_linea1.csv",
                     mime="text/csv"
@@ -444,7 +444,7 @@ if df_metadatos is not None:
             if len(linea_2) > 0:
                 csv_l2 = linea_2.to_csv(index=False).encode('utf-8')
                 st.download_button(
-                    label="⬇️ Descargar Línea 2",
+                    label="Descargar Línea 2",
                     data=csv_l2,
                     file_name=f"{video_seleccionado}_linea2.csv",
                     mime="text/csv"
@@ -454,10 +454,9 @@ else:
     st.error("No se pudo cargar el archivo de metadatos. Verifica la ruta 'datos/Metadatos.csv'")
 
 # Footer
-st.divider()
+st.markdown("---")
 st.markdown("""
-    <div style='text-align: center; color: gray; padding: 20px;'>
-        <p>🚗 Sistema de Aforo Vehicular con Visión Computacional</p>
-        <p>Desarrollado con Streamlit y Plotly</p>
-    </div>
-    """, unsafe_allow_html=True)
+<div style='text-align: center; color: #6b7280; font-size: 0.9rem;'>
+Sistema de Análisis de Aforo Vehicular | Universidad del Caribe & IMPLAN © 2025
+</div>
+""", unsafe_allow_html=True)
