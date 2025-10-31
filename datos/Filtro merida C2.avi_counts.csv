@@ -1,0 +1,13 @@
+line_id,class,count
+1,car,118
+1,person,22
+1,truck,69
+1,bicycle,6
+1,motorbike,16
+2,car,135
+2,person,16
+2,motorbike,7
+2,bicycle,1
+2,truck,74
+2,bus,3
+2,train,2
