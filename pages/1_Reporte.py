@@ -159,6 +159,100 @@ if df_metadatos is not None:
                 st.metric("Camiones", f"{total_camiones:,}")
             with col4:
                 st.metric("Personas", f"{total_personas:,}")
+            # Mostrar GIF del video seleccionado si aplica
+            # Requerimiento: mostrar el GIF en la pestaña cuando el video sea 'Fracc kusamil C2.avi'
+            try:
+                if isinstance(video_seleccionado, str) and video_seleccionado.strip() == "Fracc kusamil C2.avi":
+                    gif_path = "gifs/kusamil_corto.gif"
+                    st.divider()
+                    st.subheader("Preview del Video (GIF)")
+                    if os.path.exists(gif_path):
+                        # st.image reproducirá el GIF animado en Streamlit
+                        # use_column_width está obsoleto; usar use_container_width
+                        st.image(gif_path, caption="kusamil_corto.gif", use_container_width=True)
+                    else:
+                        st.warning(f"GIF no encontrado en: {gif_path}")
+
+                if isinstance(video_seleccionado, str) and video_seleccionado.strip() == "Filtro merida C2.avi":
+                    gif_path = "gifs/filtro_corto.gif"
+                    st.divider()
+                    st.subheader("Preview del Video (GIF)")
+                    if os.path.exists(gif_path):
+                        # st.image reproducirá el GIF animado en Streamlit
+                        # use_column_width está obsoleto; usar use_container_width
+                        st.image(gif_path, caption="filtro_corto.gif", use_container_width=True)
+                    else:
+                        st.warning(f"GIF no encontrado en: {gif_path}")
+
+                if isinstance(video_seleccionado, str) and video_seleccionado.strip() == "Fracc kusamil C2 2.avi":
+                    gif_path = "gifs/kusamil_2.gif"
+                    st.divider()
+                    st.subheader("Preview del Video (GIF)")
+                    if os.path.exists(gif_path):
+                        # st.image reproducirá el GIF animado en Streamlit
+                        # use_column_width está obsoleto; usar use_container_width
+                        st.image(gif_path, caption="kusamil_2.gif", use_container_width=True)
+                    else:
+                        st.warning(f"GIF no encontrado en: {gif_path}")
+
+                if isinstance(video_seleccionado, str) and video_seleccionado.strip() == "Portillo - Lakin.avi":
+                    gif_path = "gifs/port_lakin.gif"
+                    st.divider()
+                    st.subheader("Preview del Video (GIF)")
+                    if os.path.exists(gif_path):
+                        # st.image reproducirá el GIF animado en Streamlit
+                        # use_column_width está obsoleto; usar use_container_width
+                        st.image(gif_path, caption="port_lakin.gif", use_container_width=True)
+                    else:
+                        st.warning(f"GIF no encontrado en: {gif_path}")
+
+                if isinstance(video_seleccionado, str) and video_seleccionado.strip() == "272 (2025-06-30 18'00'00 - 2025-06-30 18'30'00).avi":
+                    gif_path = "gifs/272.gif"
+                    st.divider()
+                    st.subheader("Preview del Video (GIF)")
+                    if os.path.exists(gif_path):
+                        # st.image reproducirá el GIF animado en Streamlit
+                        # use_column_width está obsoleto; usar use_container_width
+                        st.image(gif_path, caption="port_lakin.gif", use_container_width=True)
+                    else:
+                        st.warning(f"GIF no encontrado en: {gif_path}") 
+
+                if isinstance(video_seleccionado, str) and video_seleccionado.strip() == "28 (2025-06-30 08'00'00 - 2025-06-30 08'30'00).avi":
+                    gif_path = "gifs/zh.gif"
+                    st.divider()
+                    st.subheader("Preview del Video (GIF)")
+                    if os.path.exists(gif_path):
+                        # st.image reproducirá el GIF animado en Streamlit
+                        # use_column_width está obsoleto; usar use_container_width
+                        st.image(gif_path, caption="port_lakin.gif", use_container_width=True)
+                    else:
+                        st.warning(f"GIF no encontrado en: {gif_path}")        
+
+                if isinstance(video_seleccionado, str) and video_seleccionado.strip() == "Portillo - Lakin 2.avi":
+                    gif_path = "gifs/port_lakin_2.gif"
+                    st.divider()
+                    st.subheader("Preview del Video (GIF)")
+                    if os.path.exists(gif_path):
+                        # st.image reproducirá el GIF animado en Streamlit
+                        # use_column_width está obsoleto; usar use_container_width
+                        st.image(gif_path, caption="video", use_container_width=True)
+                    else:
+                        st.warning(f"GIF no encontrado en: {gif_path}")      
+
+                if isinstance(video_seleccionado, str) and video_seleccionado.strip() == "Av Portillo - Av Paraiso Maya.avi":
+                    gif_path = "gifs/port_maya.gif"
+                    st.divider()
+                    st.subheader("Video")
+                    if os.path.exists(gif_path):
+                        # st.image reproducirá el GIF animado en Streamlit
+                        # use_column_width está obsoleto; usar use_container_width
+                        st.image(gif_path, caption="kusamil_corto.gif", use_container_width=True)
+                    else:
+                        st.warning(f"GIF no encontrado en: {gif_path}")  
+
+            except Exception as _e:
+                # No dejar que un error de visualización rompa la página
+                st.error("No se pudo mostrar el GIF del video seleccionado.")
 
             st.divider()
             
